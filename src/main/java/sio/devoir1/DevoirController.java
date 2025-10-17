@@ -159,15 +159,15 @@ public class DevoirController implements Initializable {
 
     @FXML
     public void btnAjouterClicked(Event event) {
-        if(tvPlats.getSelectionModel().getSelectedItem()!=null){
+        if(tvPlats.getSelectionModel().getSelectedItem()==null){
             alert.setContentText("Veuillez choisir un plat");
             alert.showAndWait();
         }
-        else if(tvCartes.getSelectionModel().getSelectedItem()!=null){
+        else if(tvCartes.getSelectionModel().getSelectedItem()==null){
             alert.setContentText("Veuillez choisir une carte");
             alert.showAndWait();
         }
-        else if(lvMenus.getSelectionModel().getSelectedItem()!=null){
+        else if(lvMenus.getSelectionModel().getSelectedItem()==null){
             alert.setContentText("Veuillez choisir une menu");
             alert.showAndWait();
         }
