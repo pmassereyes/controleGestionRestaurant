@@ -133,8 +133,25 @@ public class DevoirController implements Initializable {
     public void lvCategoriesClicked(Event event) {
         // A vous de jouer pour afficher les plats de la catégorie sélectionnée
         if(lvCategories.getSelectionModel().getSelectedItem()=="Entrées"){
-            tcNomPlat.setCellValueFactory(new PropertyValueFactory<>("nom"));
-            tcPrixPlat.setCellValueFactory(new PropertyValueFactory<>("prix"));
+            tvPlats.getItems().clear();
+           for (Plat entre : lesPlats.get("Entrées"))
+           {
+               tvPlats.getItems().add(entre);
+           }
+        }
+        else if(lvCategories.getSelectionModel().getSelectedItem()=="Plats"){
+            tvPlats.getItems().clear();
+            for (Plat plat : lesPlats.get("Plats"))
+            {
+                tvPlats.getItems().add(plat);
+            }
+        }
+        if(lvCategories.getSelectionModel().getSelectedItem()=="Desserts"){
+            tvPlats.getItems().clear();
+            for (Plat dessert : lesPlats.get("Desserts"))
+            {
+                tvPlats.getItems().add(dessert);
+            }
         }
 
     }
